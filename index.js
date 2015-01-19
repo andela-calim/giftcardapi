@@ -2,7 +2,6 @@
 var express		= require('express'),
 		morgan		= require('morgan'),
 		bodyParser= require('body-parser'),
-		// jwt				= require('jsonwebtoken'),
 		mongoose	= require('mongoose'),
 
 		giftApp		= express();

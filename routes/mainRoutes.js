@@ -23,7 +23,7 @@ giftRouter.route('/api')
 		}
 		console.log('Found ' + item.length + ' items! \n' + item);
 		response.status(200).send(item);
-	})
+	});
 })
 .post(function(request, response) {
 	console.log('request gotten');
@@ -35,7 +35,7 @@ giftRouter.route('/api')
 		console.log(item.itemName + ' has been added!');
 		console.log(item);
 		return response.status(201).send(item);
-	})
+	});
 });
 
 // API routes with id
@@ -51,7 +51,7 @@ giftRouter.route('/api/:id')
 		}
 		console.log('Item doesn\'t exist!');
 		return response.status(404).send('Item doesn\'t exist!');
-	})
+	});
 })
 .put(function(request, response) {
 	Item.findByIdAndUpdate(request.params.id, request.body, function(err, item) {
@@ -77,7 +77,7 @@ giftRouter.route('/api/:id')
 		}
 		console.log('Item ' + request.params.id + ' doesn\'t exist!');
 		return response.status(404).send('Item ' + request.params.id + ' doesn\'t exist!');
-	})
+	});
 });
 
 // FrontEnd routes
@@ -136,7 +136,7 @@ giftRouter.post('/signin', function(request, response) {
               token: user1.token
             });
           });
-        })
+        });
       }
     }
   });
