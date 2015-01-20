@@ -82,10 +82,8 @@ giftRouter.route('/api/:id')
 
 // FrontEnd routes
 giftRouter.post('/authenticate', function(request, response) {
-	console.log('inside post/authenticate');
-
   User.findOne({email: request.body.email, password: request.body.password}, function(err, user) {
-  	debugger;
+  	
     if (err) {
       response.json({
         type: false,
